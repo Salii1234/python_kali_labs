@@ -17,7 +17,7 @@ def threat_scanner_evaluator(ip_address, Servrity_tag):
     elif ip_address in suspicious_activity:
         return f'[SUSPICIOUS THREAT] --NOTICE IP: {ip_address} HAS A SEVERITY OF AN {Servrity_tag} LEVEL'
     elif ip_address in authorized_ips:
-        return f'[AUTHORIZED THREAT] --NOTICE IP: {ip_address} HAS A SEVERITY OF AN {Servrity_tag} LEVEL'
+        return f'[AUTHORIZED IP] --NOTICE IP: {ip_address} HAS A SEVERITY OF AN {Servrity_tag} LEVEL'
     else:
         return f'[UNKNOWN IP] --NOTICE IP {ip_address} WAS NOT FOUND IN DATABASE'
     
@@ -42,5 +42,5 @@ while True:
         print("System terminated successfully")
         break
 
-    result2 = threat_scanner_evaluator(user_input,Servrity_tag="STANDARD")
+    result2 = threat_scanner_evaluator(user_input, Servrity_tag="STANDARD")
     print(result2)

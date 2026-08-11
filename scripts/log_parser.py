@@ -11,8 +11,8 @@
 
 blocked_counter = 0
 
-with open('raw_firewall.log', 'r') as firewall_file:
-    with open('blocked_threats.log', 'w') as block_files:
+with open('logs/raw_firewall.log', 'r') as firewall_file:
+    with open('logs/blocked_threats.log', 'w') as block_files:
 
         block_files.write('=== BLOCKED FILE SORTING PROCEDURE ===\n\n')
 
@@ -24,7 +24,7 @@ with open('raw_firewall.log', 'r') as firewall_file:
                 print(f'[BLOCKED FILE] -> {clean_line}')
                 blocked_counter += 1
     
-    with open('blocked_threats.log', 'a') as parser_file:
+    with open('logs/blocked_threats.log', 'a') as parser_file:
         parser_file.write('\n--- NEW SCAN RUN: 2026-08-04 ---\n')
 
 print(f"Scan complete: {blocked_counter} blocked IPs saved to blocked_threats.txt")  
