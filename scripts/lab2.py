@@ -1,4 +1,4 @@
-# A function is used when I want to perform multiple taks without haveing to write numerous lines of code
+# A function is used when I want to perform multiple taks without having to write numerous lines of code
 # I can just create a simple function and stores all those lines of code into one organized block.
 
 # def check_password_strength(password):
