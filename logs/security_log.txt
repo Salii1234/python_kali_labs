@@ -1,0 +1,5 @@
+[ALERT]: Blacklisted ip detected: 172.0.516
+[ALERT]: Blacklisted ip detected: 192.168.1.50
+[2026-10-22 11:48:44][ALERT]: Blacklisted ip detected: 192.168.1.50
+[2026-10-22 11:56:09][ALERT]: Clean ip detected: 60.4.7.69
+[2026-10-22 12:00:17][NOTE]: Clean ip detected: 072.4.816
