@@ -21,7 +21,7 @@
 #         # AF_INET specifies IPv4, SOCK_STREAM specifies TCP
 #         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-#         # set a timer so the script does'nt crash trying to look for an recipent
+#         # set a timer so the script doesn't crash trying to look for an recipent
 #         s.settimeout(1.0)
 
 #         # to really know if its opened or closed, we use s.connect_ex()
@@ -83,7 +83,19 @@ try:
         result = s.connect_ex((target_host, port))
 
         if result == 0:
-            print(f' Port {port}: OPEN')
+            print(f'Port {port}: OPEN')
+            #Banner gathering. To get more details of our ports
+            try:
+                s.settimeout(1.0)
+
+                banner = s.recv(1024) .decode('utf-8', errors='ignore').strip()
+
+                if banner:
+                    print(f' [+] Banner: {banner}')
+                else:
+                    print('  [-] Service open, but banner failed to return')
+            except Exception:
+                print('[-] Could not retrieve banner')
         else: 
             print(f'Port {port}: CLOSED')
 
